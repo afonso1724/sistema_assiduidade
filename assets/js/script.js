@@ -221,7 +221,7 @@ function bindLoginForm(){
 
     // Determine target based on role (case-insensitive)
     const r = role.toLowerCase();
-    let target = 'login.html';
+    let target = 'index.html';
     if (r.includes('admin')) target = 'admin/dashboard.html';
     else if (r.includes('professor')) target = 'professor/dashboard.html';
     else if (r.includes('aluno')) target = 'aluno/dashboard.html';
@@ -291,7 +291,7 @@ function bindLogoutButtons(){
       // Show toast and redirect
       showAlert('Até logo! Redirecionando...', 'info');
       setTimeout(() => {
-        window.location.href = '../login.html';
+        window.location.href = '../index.html';
       }, 1500);
     });
   });
