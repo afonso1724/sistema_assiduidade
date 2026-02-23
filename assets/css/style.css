@@ -1,0 +1,65 @@
+/* Global styles for Sistema de Assiduidade (Português) */
+:root{--bg:#f8f9fa;--card-radius:.75rem}
+html,body{height:100%}
+body{background:var(--bg);overflow-x:hidden;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif}
+
+/* Sidebar */
+.sidebar-desktop{min-height:100vh;background:#fff;border-right:1px solid #e9ecef;padding-top:1rem}
+.sidebar-desktop .nav-link{color:#495057}
+.sidebar-desktop .nav-link.active{background:transparent;color:#0d6efd;font-weight:600}
+
+/* Cards */
+.card-clean{background:#fff;border:none;border-radius:var(--card-radius)}
+.shadow-sm{box-shadow:0 .125rem .25rem rgba(18,38,63,.04)!important}
+.card-clean:hover{transform:translateY(-4px);box-shadow:0 .5rem 1rem rgba(18,38,63,.06)}
+
+/* Stat visuals */
+.stat-value{font-size:1.5rem;font-weight:600}
+.stat-label{color:#6c757d}
+
+/* Tables */
+.table-responsive{overflow-x:auto}
+.badge-presente{background:#198754}
+.badge-falta{background:#dc3545}
+.badge-justificado{background:#ffc107;color:#212529}
+
+/* Buttons responsive stack */
+.action-group .btn{border-radius:.375rem}
+@media (max-width:767.98px){.action-btn{width:100%;display:block}}
+
+/* Progress animation helper */
+.progress-animated .progress-bar{transition:width 1.2s ease}
+
+/* Forms */
+.form-control,.form-select{border-radius:.5rem}
+
+/* Utility tweaks */
+.no-overflow{max-width:100%;overflow-x:hidden}
+
+/* Modal sizing */
+.modal .modal-dialog{max-width:520px}
+
+/* Helper: hide horizontal scrollbar artifacts on tiny screens */
+@media (max-width:420px){.card-clean{box-shadow:0 .25rem .5rem rgba(15,23,42,.06)}}
+
+/* Footer small text */
+.small-muted{font-size:.9rem;color:#6c757d}
+
+/* Alerts profissionais com border-left e cores ajustadas */
+.alert{border:none;border-radius:.75rem;font-size:.95rem;font-weight:500;padding:1rem 1.25rem;margin-bottom:1rem;box-shadow:0 .125rem .5rem rgba(18,38,63,.06);animation:slideDown .3s ease both}
+@keyframes slideDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+
+.alert-success{background:#d1f2eb;color:#0f6938;border-left:4px solid #198754}
+.alert-danger{background:#f8d7da;color:#842029;border-left:4px solid #dc3545}
+.alert-warning{background:#fff3cd;color:#664d03;border-left:4px solid #ffc107}
+.alert-info{background:#cfe2ff;color:#084298;border-left:4px solid #0d6efd}
+
+/* Form fields com estado inválido profissional */
+.form-control.is-invalid,.form-select.is-invalid{border-color:#dc3545;box-shadow:0 0 0 .2rem rgba(220,53,69,.15)}
+.form-control.is-invalid:focus,.form-select.is-invalid:focus{border-color:#dc3545;box-shadow:0 0 0 .2rem rgba(220,53,69,.25)}
+
+.invalid-feedback{display:block;font-size:.875rem;color:#dc3545;margin-top:.35rem;font-weight:500}
+
+/* Close button refinement */
+.alert .btn-close{opacity:.7;transition:opacity .2s ease}
+.alert .btn-close:hover{opacity:1}

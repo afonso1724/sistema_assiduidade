@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Presença dos Alunos — Professor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+  </head>
+  <body data-page="presença dos alunos" class="no-overflow">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <nav class="col-md-3 col-lg-2 d-none d-md-block sidebar-desktop">
+          <div class="px-3">
+            <a class="d-flex align-items-center mb-3 text-decoration-none" href="#">
+              <span class="fs-4 fw-semibold">Professor</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item"><a class="nav-link" href="dashboard.html">Painel</a></li>
+              <li class="nav-item"><a class="nav-link active" href="presenca-alunos.html">Presença dos Alunos</a></li>
+              <li class="nav-item"><a class="nav-link" href="relatorios.html">Relatórios</a></li>
+              <li class="nav-item"><a class="nav-link text-danger logout-btn" href="#" data-logout>Sair</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item"><a class="nav-link" href="dashboard.html">Painel</a></li>
+              <li class="nav-item"><a class="nav-link active" href="presenca-alunos.html">Presença dos Alunos</a></li>
+              <li class="nav-item"><a class="nav-link" href="relatorios.html">Relatórios</a></li>
+              <li class="nav-item"><a class="nav-link text-danger logout-btn" href="#" data-logout>Sair</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <main class="col-12 col-md-9 col-lg-10">
+          <header class="py-2 px-3 border-bottom">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <button class="btn btn-outline-secondary d-md-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <h4 class="mb-0">Presença dos Alunos</h4>
+              </div>
+              <div class="d-flex gap-2">
+                <select class="form-select" style="max-width:160px;"><option>Turma A</option><option>Turma B</option></select>
+                <select class="form-select" style="max-width:160px;"><option>Matemática</option><option>História</option></select>
+                <input type="date" class="form-control auto-date" style="max-width:160px;" />
+              </div>
+            </div>
+          </header>
+
+          <section class="p-3 p-md-4">
+            <div class="card card-clean shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Lista de Alunos</h5>
+                <form>
+                  <div class="list-group mb-3">
+                    <label class="list-group-item d-flex align-items-center justify-content-between">
+                      <div><div class="fw-semibold">Lucas Andrade</div><div class="small-muted">Turma A</div></div>
+                      <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="lucas" id="lucas-presente" autocomplete="off" checked>
+                        <label class="btn btn-outline-success btn-sm" for="lucas-presente">Presente</label>
+                        <input type="radio" class="btn-check" name="lucas" id="lucas-falta" autocomplete="off">
+                        <label class="btn btn-outline-danger btn-sm" for="lucas-falta">Falta</label>
+                        <input type="radio" class="btn-check" name="lucas" id="lucas-just" autocomplete="off">
+                        <label class="btn btn-outline-warning btn-sm" for="lucas-just">Justificado</label>
+                      </div>
+                    </label>
+
+                    <label class="list-group-item d-flex align-items-center justify-content-between">
+                      <div><div class="fw-semibold">Beatriz Lima</div><div class="small-muted">Turma A</div></div>
+                      <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="beatriz" id="beatriz-presente" autocomplete="off">
+                        <label class="btn btn-outline-success btn-sm" for="beatriz-presente">Presente</label>
+                        <input type="radio" class="btn-check" name="beatriz" id="beatriz-falta" autocomplete="off" checked>
+                        <label class="btn btn-outline-danger btn-sm" for="beatriz-falta">Falta</label>
+                        <input type="radio" class="btn-check" name="beatriz" id="beatriz-just" autocomplete="off">
+                        <label class="btn btn-outline-warning btn-sm" for="beatriz-just">Justificado</label>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="d-grid">
+                    <button type="button" class="btn btn-primary btn-save" data-message="Presenças dos alunos salvas!">Salvar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

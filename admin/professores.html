@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gerir Professores — Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+  </head>
+  <body data-page="gerir professores" class="no-overflow">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-none d-md-block sidebar-desktop">
+          <div class="px-3">
+            <a class="d-flex align-items-center mb-3 text-decoration-none" href="#">
+              <span class="fs-4 fw-semibold">Administrador</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item"><a class="nav-link" href="dashboard.html">Painel</a></li>
+              <li class="nav-item"><a class="nav-link active" href="professores.html">Gerir Professores</a></li>
+              <li class="nav-item"><a class="nav-link" href="presenca-professores.html">Presença dos Professores</a></li>
+              <li class="nav-item"><a class="nav-link" href="relatorios.html">Relatórios</a></li>
+              <li class="nav-item"><a class="nav-link text-danger logout-btn" href="#" data-logout>Sair</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item"><a class="nav-link" href="dashboard.html">Painel</a></li>
+              <li class="nav-item"><a class="nav-link active" href="professores.html">Gerir Professores</a></li>
+              <li class="nav-item"><a class="nav-link" href="presenca-professores.html">Presença dos Professores</a></li>
+              <li class="nav-item"><a class="nav-link" href="relatorios.html">Relatórios</a></li>
+              <li class="nav-item"><a class="nav-link text-danger logout-btn" href="#" data-logout>Sair</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Main -->
+        <main class="col-12 col-md-9 col-lg-10">
+          <header class="py-2 px-3 border-bottom">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <button class="btn btn-outline-secondary d-md-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <h4 class="mb-0">Gerir Professores</h4>
+              </div>
+              <div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Adicionar Professor</button>
+              </div>
+            </div>
+          </header>
+
+          <section class="p-3 p-md-4">
+            <!-- Lista de professores -->
+            <div class="card card-clean shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Professores</h5>
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Disciplina</th>
+                        <th class="text-end">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Maria Silva</td>
+                        <td>maria@escola.com</td>
+                        <td>Matemática</td>
+                        <td class="text-end">
+                          <div class="d-grid gap-2 d-md-flex justify-content-end">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Remover</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>João Pereira</td>
+                        <td>joao@escola.com</td>
+                        <td>História</td>
+                        <td class="text-end">
+                          <div class="d-grid gap-2 d-md-flex justify-content-end">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Remover</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ana Costa</td>
+                        <td>ana@escola.com</td>
+                        <td>Ciências</td>
+                        <td class="text-end">
+                          <div class="d-grid gap-2 d-md-flex justify-content-end">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Remover</button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer small note -->
+            <p class="small-muted">Os botões acima só simulam ações no frontend.</p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Modal para adicionar professor (apenas frontend) -->
+    <div class="modal fade" id="modalAdicionar" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Adicionar Professor</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formAdicionar">
+              <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Disciplina</label>
+                <input class="form-control" required />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary btn-save-modal">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
